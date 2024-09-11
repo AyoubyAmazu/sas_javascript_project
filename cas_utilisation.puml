@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+"Main Admin" as Admin
+Admin -- (ajouter des patients)
+Admin -- (modifier les donnee de patient)
+Admin -- (supprimer patient)
+Admin -- (consulter list patient)
+Admin -- (recherche patient)
+
+@enduml
