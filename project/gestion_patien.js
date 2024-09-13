@@ -19,7 +19,7 @@ const startCalculator = async () => {
     let numero_de_securite_sociale;
     let again = true;
     while(again){
-    const letter = await askQuestion("Enter the what u wanna do (add,show,delete,search,quitter): ");
+    const letter = await askQuestion("Enter the what u wanna do (add,show,delete,search,quitter,modiffier): ");
     if(letter == "quitter"){
         again = false;
     }else if (letter == "add") {
@@ -45,7 +45,13 @@ const startCalculator = async () => {
       console.log(manager.searchPatient(nom));
     }else if ( letter == "show"){
       console.log(manager.afficher());
-    }}
+    }else if(letter == "modifier"){
+      number = await askQuestion("Enter the NSS of patient u wanna modifier: ");
+      changeQuoi =  await askQuestion("u wanna modifier 'first_name','last_name','addres','age','NSS': ");
+      newValue = await askQuestion("entrer new value: ");
+      manager.modifier(number,changeQuoi,newValue);
+    }
+  }
     rl.close();
   
 };
